@@ -1,0 +1,149 @@
+// Base styles
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #eaeaea;
+    background-color: #121212;
+    overflow-x: hidden;
+  }
+  
+  // Main container
+  .dashboard-container {
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  // Navbar
+.navbar {
+    display: flex;
+    justify-content: center;
+    .navbar-brand {
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: #eaeaea;
+      text-align: center;
+    }
+  }
+  
+  
+  // Search Input
+.search-input {
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #ffffff; // Set background color to white
+    color: #121212; // Set text color to dark for contrast
+    border: none;
+    margin-bottom: 20px;
+  }
+  
+  
+  // Search Results
+.search-results {
+    border-radius: 10px;
+    background-color: #1e1e1e;
+    overflow: hidden;
+  }
+  
+  .search-result-item {
+    cursor: pointer;
+    padding: 10px;
+    color: #000000; // Set text color to black for search results
+    transition: background-color 0.3s, color 0.3s;
+    
+    &:hover {
+      background-color: #333;
+      color: #fff; // Change text color to white on hover for better contrast
+    }
+  }
+  
+  
+  // Artist Details Card
+.artist-details-card {
+    background-color: #1e1e1e;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+  
+    .card-title {
+      color: #ffffff; // White color for artist name
+    }
+  
+    .card-text {
+      color: #ffffff; // White color for total duration text
+    }
+  }
+  
+  
+ // Recently Searched Artists Card
+.recently-searched-card {
+    background-color: #1e1e1e;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+  
+    .recent-artist-item {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      color: #000000; // Black text color for artist names
+      border-bottom: 1px solid #333;
+  
+      img.artist-thumbnail {
+        border-radius: 50%;
+        height: 50px; // Adjust height to make image smaller
+        width: 50px;  // Adjust width to make image smaller
+        margin-right: 15px;
+        object-fit: cover;
+      }
+    }
+  }
+  
+  
+  
+  // User Dashboard Card
+.user-dashboard-card {
+    background-color: #1e1e1e;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+  
+    .card-header {
+      color: #eaeaea; // White text color for card header
+    }
+  
+    .user-artist-item {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      color: #000000; // Black text color for artist details
+      border-bottom: 1px solid #333;
+  
+      div {
+        color: #000000; // Ensure all text within the item is black
+      }
+    }
+  }
+  
+  
+  
+  
+  .user-artist-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #eaeaea;
+    border-bottom: 1px solid #333;
+  }
+  
+  .user-artist-image {
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    margin-right: 15px;
+    object-fit: cover;
+  }
+  

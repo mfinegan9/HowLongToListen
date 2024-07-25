@@ -2,21 +2,44 @@
     background-color: #121212;
     color: #eaeaea;
     min-height: 100vh;
-  }
-  
-  .user-dashboard-card {
+}
+
+// User Dashboard Card
+.user-dashboard-card {
     background-color: #1e1e1e;
     border: none;
-  }
-  
-  .user-artist-image {
+    border-radius: 10px;
+    margin-top: 20px;
+
+    .card-header {
+        color: #eaeaea; // White text color for card header
+    }
+
+    .user-artist-item {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        color: #000000; // Set text color to blue
+        border-bottom: 1px solid #333;
+
+        div {
+            color: #000000; // Ensure all text within the item is blue
+        }
+    }
+}
+
+
+.user-artist-image {
     border-radius: 50%;
     height: 80px;
     width: 80px;
     margin-bottom: 10px;
-  }
-  
-  .progress-bar-container {
-    margin-top: 10px;
-  }
-  
+}
+
+.artist-name {
+    color: #000000; // Ensure artist name text is black
+}
+
+.total-duration {
+    color: #000000; // Ensure total duration text is black
+}

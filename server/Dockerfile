@@ -1,20 +1,20 @@
-# Use the official Node.js image.
+# Use the official Node.js image
 FROM node:20
 
-# Create and change to the app directory.
+# Set the working directory
 WORKDIR /usr/src/app
 
-# Copy application dependency manifests to the container image.
+# Copy the package.json and package-lock.json files
 COPY server/package*.json ./
 
-# Install dependencies.
+# Install dependencies
 RUN npm install
 
-# Copy local code to the container image.
-COPY server/src ./
+# Copy the server source code
+COPY server/ ./
 
-# Run the web service on container startup.
-CMD [ "node", "server.js" ]
-
-# Document that the service listens on port 8080.
+# Expose the port your server runs on
 EXPOSE 8080
+
+# Run the server
+CMD ["node", "index.js"]

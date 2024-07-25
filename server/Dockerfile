@@ -14,7 +14,6 @@ RUN npm install
 COPY server/src ./
 
 # Run the web service on container startup.
-CMD [ "node", "index.js" ]
-
+CMD [ "node", "server.js" ]  
 # Document that the service listens on port 8080.
 EXPOSE 8080

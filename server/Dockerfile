@@ -15,8 +15,8 @@ RUN npm install
 # Copy local code to the container image.
 COPY . .
 
-# Run the web service on container startup.
-CMD [ "node", "index.js" ]
-
 # Document that the service listens on port 8080.
 EXPOSE 8080
+
+# Run the web service on container startup.
+CMD [ "node", "index.js" ]

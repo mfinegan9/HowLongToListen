@@ -4,17 +4,17 @@ FROM node:20
 # Create and set the working directory
 WORKDIR /usr/src/app
 
-# Copy the package.json and package-lock.json (if available)
-COPY client/package*.json ./
+# Copy the package.json and package-lock.json
+COPY package*.json ./
 
 # Install dependencies
 RUN npm install
 
-# Copy the entire client directory into the container
-COPY client/ .
+# Copy the entire server directory into the container
+COPY . .
 
-# Expose the port the app runs on
-EXPOSE 3000
+# Expose the port the server runs on
+EXPOSE 3001
 
-# Command to run the application
-CMD ["node", "src/index.js"]
+# Command to run the server
+CMD ["node", "server.js"]

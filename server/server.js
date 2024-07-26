@@ -119,15 +119,22 @@
 
 
 
+
+
 require('dotenv').config();
-const express = require("express");
-const cors = require("cors");
-const { Pool } = require("pg");
-const SpotifyWebApi = require("spotify-web-api-node");
+const express = require('express');
+const cors = require('cors');
+const { Pool } = require('pg');
+const SpotifyWebApi = require('spotify-web-api-node');
 
 const app = express();
-const port = 3007;
+const port = process.env.PORT || 3007; // Use the port from environment variables or default to 3007
 
+// Middlewares
+app.use(cors());
+app.use(express.json());
+
+// PostgreSQL client configuration
 const pool = new Pool({
   user: "postgres",
   host: "localhost",
@@ -135,6 +142,19 @@ const pool = new Pool({
   password: "Monkeybusiness",
   port: 5432,
 });
+
+// Example route
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
+
+
+
 
 // Middleware
 app.use(cors({

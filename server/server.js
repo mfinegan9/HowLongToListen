@@ -121,6 +121,50 @@
 
 
 
+// require('dotenv').config();
+// const express = require('express');
+// const cors = require('cors');
+// const { Pool } = require('pg');
+// const SpotifyWebApi = require('spotify-web-api-node');
+
+// const app = express();
+// const port = process.env.PORT || 3007; // Use the port from environment variables or default to 3007
+
+// // Middlewares
+// app.use(cors());
+// app.use(express.json());
+
+// // PostgreSQL client configuration
+// const pool = new Pool({
+//   user: "postgres",
+//   host: "localhost",
+//   database: "spotify_project",
+//   password: "Monkeybusiness",
+//   port: 5432,
+// });
+
+// // Example route
+// app.get('/', (req, res) => {
+//   res.send('Hello World!');
+// });
+
+// // Start the server
+// app.listen(port, () => {
+//   console.log(`Server is running on http://localhost:${port}`);
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -136,11 +180,10 @@ app.use(express.json());
 
 // PostgreSQL client configuration
 const pool = new Pool({
-  user: "postgres",
-  host: "localhost",
-  database: "spotify_project",
-  password: "Monkeybusiness",
-  port: 5432,
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false // This is needed for Heroku's PostgreSQL connection
+  }
 });
 
 // Example route
@@ -152,8 +195,6 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
-
-
 
 
 // Middleware

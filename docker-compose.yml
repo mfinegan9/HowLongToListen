@@ -30,3 +30,36 @@
 #       POSTGRES_DB: spotify_project
 #     ports:
 #       - "5432:5432"
+
+
+
+
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Monkeybusiness
+     POSTGRES_DB: spotify_project
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: backend
+    environment:
+      DATABASE_URL: postgres://postgres:Monkeybusiness@postgres:5432/spotify-project
+    ports:
+      - "5000:5000"
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:

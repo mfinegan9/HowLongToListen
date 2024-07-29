@@ -1,3 +1,2 @@
-web: node server/src/server.js
-worker: node server/src/worker.js
+web: node server/server.js
 release: npm run migrate

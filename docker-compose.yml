@@ -57,7 +57,7 @@ services:
     environment:
       DATABASE_URL: postgres://postgres:Monkeybusiness@postgres:5432/spotify-project
     ports:
-      - "5000:5000"
+      - "3000:3000"
     depends_on:
       - postgres
 

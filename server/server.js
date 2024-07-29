@@ -305,7 +305,7 @@
 
 
 
-require('dotenv').config();
+rrequire('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const { Pool } = require('pg');
@@ -414,5 +414,5 @@ app.get("/user-artists", async (req, res) => {
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on http://localhost:${port}`);
 });

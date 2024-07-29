@@ -303,6 +303,8 @@
 
 
 
+
+
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -314,7 +316,7 @@ const port = process.env.PORT || 3000; // Use the port from environment variable
 
 // Middlewares
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000', // Allow frontend URL from environment variables
+  origin: 'http://localhost:3000', // This can be adjusted based on your frontend
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -414,4 +416,3 @@ app.get("/user-artists", async (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
-

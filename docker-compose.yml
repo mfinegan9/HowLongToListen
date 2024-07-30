@@ -33,33 +33,40 @@
 
 
 
-
 version: '3.8'
 
 services:
+  backend:
+    build:
+      context: ./server  # Path to your Express app
+    ports:
+      - "3007:3000"  # Mapping port 3007 on host to port 3000 in container
+    environment:
+      DATABASE_URL: postgres://postgres:Monkeybusiness@postgres:5432/spotify_project
+      CLIENT_ID: 69b8e423003a4b428541484e7370d768
+      CLIENT_SECRET: c4ddfbf0e3a24be48c34e1837a2ec58d
+      REDIRECT_URI: http://localhost:3000
+      PORT: 3000
+    depends_on:
+      - postgres
+
   postgres:
     image: postgres:latest
     container_name: postgres
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: Monkeybusiness
-     POSTGRES_DB: spotify_project
+      POSTGRES_DB: spotify_project
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
 
-  backend:
-    build:
-      context: ./server
-      dockerfile: Dockerfile
-    container_name: backend
-    environment:
-      DATABASE_URL: postgres://postgres:Monkeybusiness@postgres:5432/spotify-project
-    ports:
-      - "3000:3000"
-    depends_on:
-      - postgres
-
 volumes:
   postgres_data:
+
+
+
+
+
+  

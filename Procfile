@@ -1,2 +1,2 @@
-web: docker-compose -f docker-compose.yml up
+web: node server.js
 release: npm run migrate

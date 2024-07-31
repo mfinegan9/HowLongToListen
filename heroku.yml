@@ -1,5 +1,3 @@
 build:
   docker:
     web: server/Dockerfile
-release:
-  command: npm run migrate  # Ensure this command is correct for migrations if needed

@@ -20,6 +20,11 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Test route to check if server is working
+app.get('/', (req, res) => {
+  res.send('Hello World!!!!');
+});
+
 const spotifyApi = new SpotifyWebApi({
   clientId: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Col, Card, ProgressBar } from "react-bootstrap";
 import axios from "axios";
 import './UserDashboard.scss';
 
@@ -26,15 +26,16 @@ const UserDashboard = () => {
           <Col key={index} md={4} className="mb-4">
             <Card className="user-dashboard-card">
               <Card.Body>
-                <Card.Title className="artist-name">{artist.artist_name}</Card.Title>
+                <Card.Title>{artist.artist_name}</Card.Title>
                 <Card.Img
                   src={artist.artist_image}
                   alt={artist.artist_name}
                   className="user-artist-image"
                 />
-                <Card.Text className="total-duration">
+                <Card.Text>
                   Total Duration: {artist.total_duration}
                 </Card.Text>
+                
               </Card.Body>
             </Card>
           </Col>
